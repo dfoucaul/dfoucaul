@@ -4,6 +4,8 @@ from html import escape
 from pathlib import Path
 from xml.etree import ElementTree
 
+from build_exploration_motif import render as exploration_motif
+
 ROOT = Path(__file__).resolve().parents[1]
 
 
@@ -31,6 +33,14 @@ def render(kind, theme, still=False, width=330):
         text_x = 69 if kind == "stack" else 26
         rows.append(f'<text x="{text_x}" y="{y}" font-size="17" fill="{foreground}">{escape(label)}</text>')
     icon_markup = "".join(icons)
+    motif = ""
+    if kind == "exploring":
+        compact = width < 220
+        motif = exploration_motif(theme, still,
+                                  x=width-48 if compact else width-94,
+                                  y=4 if compact else -1,
+                                  width=36 if compact else 62,
+                                  height=30 if compact else 40)
     shimmer = ""
     if kind == "stack" and not still:
         shimmer = f'''<defs>
@@ -53,7 +63,7 @@ def render(kind, theme, still=False, width=330):
         <g fill="{secondary}">{icon_markup}</g>
         {''.join(rows)}
         {shimmer}
-      </g>
+      </g>{motif}
     </svg>'''
     return "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
 

@@ -42,13 +42,13 @@ def render(theme, mobile=False, still=False):
         width, height = 400, 690
         portrait = embed(avatar(theme, still), "avatar", 20, 0, 360, 330, "140 0 360 360")
         stack = embed(section("stack", theme, still, 190), "stack", 5, 400, 190, 235)
-        interests = embed(section("exploring", theme, True, 190), "interests", 205, 400, 190, 285)
+        interests = embed(section("exploring", theme, still, 190), "interests", 205, 400, 190, 285)
         name_x, name_y = 200, 348
     else:
         width, height = 960, 370
         portrait = embed(avatar(theme, still), "avatar", 0, 0, 360, 360, "140 0 360 360")
         stack = embed(section("stack", theme, still, 240), "stack", 390, 55, 240, 235)
-        interests = embed(section("exploring", theme, True, 280), "interests", 660, 55, 280, 285)
+        interests = embed(section("exploring", theme, still, 280), "interests", 660, 55, 280, 285)
         name_x, name_y = 180, 345
     name = ET.parse(ROOT / "assets/name-instrument-serif.svg").getroot()
     name.set("color", foreground)

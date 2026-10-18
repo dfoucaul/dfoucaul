@@ -47,6 +47,27 @@ Prometheus Vision.
 
 No artwork or code from those profiles is copied into this repository.
 
+## Generative accent
+
+The small silver figure beside “I'm exploring” is an original three-strand
+Lissajous drawing. Its 3:2 frequencies relate to the algorithms and mathematics
+in the interests column. The phase evolves over a seamless 32-second loop;
+there is no glow, orbit or additional content section.
+
+[Beetran Dahiya's generative README header](https://github.com/beetrandahiya/beetrandahiya)
+inspired the idea of using mathematical art as a personal signature. The curve
+geometry, animation and implementation here are original. No artwork or code
+from that profile is reused. The effect runs as embedded SVG, with explicit
+static header variants and a reduced-motion fallback within the motif itself.
+
+To rebuild the accent and composed headers:
+
+```sh
+python3 scripts/build_exploration_motif.py
+python3 scripts/build_profile_sections.py
+python3 scripts/build_profile_header.py
+```
+
 ## Rebuilding
 
 ```sh
