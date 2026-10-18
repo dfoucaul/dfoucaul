@@ -2,7 +2,7 @@
     <title id="title">Méduse, métal liquide</title>
     <desc id="description">Ma Méduse en halftone noir et blanc, entourée de gouttes argentées qui fusionnent lentement. L’animation respecte la préférence de mouvement réduit.</desc>
     <!-- Gooey technique: luukdv/gooey-react, MIT. See docs/licenses/. -->
-    
+
     <style>
       @keyframes drift-a {
         0%,100% { transform:translate(-138px,-12px) }

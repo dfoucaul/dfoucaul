@@ -42,7 +42,7 @@ def render(theme, still=False):
         .satellite-a,.satellite-b,.satellite-c { animation:none }
       }
     </style>'''
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
     <title id="title">Méduse, métal liquide</title>
     <desc id="description">Ma Méduse en halftone noir et blanc, entourée de gouttes argentées qui fusionnent lentement. L’animation respecte la préférence de mouvement réduit.</desc>
     <!-- Gooey technique: luukdv/gooey-react, MIT. See docs/licenses/. -->
@@ -91,7 +91,8 @@ def render(theme, still=False):
     <image x="237" y="97" width="166" height="166" clip-path="url(#portrait)" xlink:href="data:image/webp;base64,{image}"/>
     <circle cx="320" cy="180" r="83.5" fill="none" stroke="#ffffff" stroke-opacity=".28" stroke-width=".7"/>
     </svg>
-    '''.strip() + "\n"
+    '''
+    return "\n".join(line.rstrip() for line in svg.strip().splitlines()) + "\n"
 
 
 def main():
