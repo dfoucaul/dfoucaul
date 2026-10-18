@@ -59,8 +59,10 @@ def main():
     if current.index(start) > current.index(end):
         raise ValueError("Activity markers are in the wrong order")
     replacement = (
-        f"{start}\n**{formatted} contributions** sur les douze derniers mois, "
-        f"activité privée incluse.\n{end}"
+        f'{start}\n<p align="center">\n'
+        f'  <strong>{formatted} contributions</strong><br />\n'
+        '  <sub>Sur les douze derniers mois, activité privée incluse.</sub>\n'
+        f'</p>\n{end}'
     )
     updated = re.sub(re.escape(start) + r".*?" + re.escape(end), replacement,
                      current, flags=re.DOTALL)
