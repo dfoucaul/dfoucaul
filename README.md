@@ -16,7 +16,7 @@
     <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark.svg" />
     <source media="(max-width: 600px)" srcset="assets/companies-mobile-light.svg" />
     <source media="(prefers-color-scheme: dark)" srcset="assets/companies-dark.svg" />
-    <img src="assets/companies-light.svg" width="960" alt="Co-founder at Shredeo and Prometheus Vision. Shredeo: one platform for gyms and studios, with memberships, coaching, payments, branded apps and AI. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation." />
+    <img src="assets/companies-light.svg" width="960" alt="Co-founder at Shredeo and Prometheus Vision. Shredeo: one platform for gyms and studios, with memberships, coaching, payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation." />
   </picture>
 </p>
 <p align="center">

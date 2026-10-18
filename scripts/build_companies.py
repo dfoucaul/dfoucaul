@@ -13,7 +13,7 @@ COMPANIES = (
         (
             "One platform for gyms and studios.",
             "Memberships, coaching, payments",
-            "and branded apps, powered by AI.",
+            "and branded apps.",
         ),
     ),
     (
@@ -59,7 +59,7 @@ def render(theme, mobile=False):
     seam = "" if mobile else f'<path d="M480 83V238" stroke="{border}" stroke-width=".65"/>'
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title desc">
   <title id="title">Co-founder at Shredeo and Prometheus Vision</title>
-  <desc id="desc">Shredeo: one platform for gyms and studios, from memberships and coaching to payments, branded apps and AI. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation. Official monochrome logos.</desc>
+  <desc id="desc">Shredeo: one platform for gyms and studios, from memberships and coaching to payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation. Official monochrome logos.</desc>
   <rect width="{width}" height="{height}" fill="{background}"/>
   <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
     <text x="{label_x}" y="{label_y}" fill="{secondary}" font-size="12" letter-spacing="2.2">CO-FOUNDER</text>
