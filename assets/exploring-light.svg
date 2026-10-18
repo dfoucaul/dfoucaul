@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="330" height="235" viewBox="0 0 330 235" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="330" height="285" viewBox="0 0 330 285" role="img" aria-labelledby="title desc">
       <title id="title">I&#x27;m exploring</title>
-      <desc id="desc">Machine learning, AI &amp; models, Algorithms, Data visualization. Monochrome symbols and a restrained silver highlight.</desc>
-      <rect width="330" height="235" fill="#ffffff"/>
+      <desc id="desc">Machine learning, AI &amp; models, Algorithms, Data visualization, Financial modeling, M&amp;A.</desc>
+      <rect width="330" height="285" fill="#ffffff"/>
       <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
         <text x="26" y="25" fill="#1f2328" font-size="18" font-weight="500">I&#x27;m exploring</text>
         <path d="M26 43H304" stroke="#d1d9e0" stroke-width=".65"/>
-        <g fill="#59636e"><g transform="translate(26 58)" fill="none" stroke="#59636e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 6l7 6 7-6M5 18l7-6 7 6"/><circle cx="5" cy="6" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/></g><g transform="translate(26 102)" fill="none" stroke="#59636e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2Z"/></g><g transform="translate(26 146)" fill="none" stroke="#59636e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v10a4 4 0 004 4h8M6 10h7a4 4 0 004-4V4"/><circle cx="6" cy="3" r="2"/><circle cx="17" cy="3" r="2"/><circle cx="19" cy="18" r="2"/></g><g transform="translate(26 190)" fill="none" stroke="#59636e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v17h17M8 15l4-5 4 2 5-7"/></g></g>
-        <text x="69" y="77" font-size="17" fill="#1f2328">Machine learning</text><text x="69" y="121" font-size="17" fill="#1f2328">AI &amp; models</text><text x="69" y="165" font-size="17" fill="#1f2328">Algorithms</text><text x="69" y="209" font-size="17" fill="#1f2328">Data visualization</text>
+        <g fill="#59636e"></g>
+        <text x="26" y="77" font-size="17" fill="#1f2328">Machine learning</text><text x="26" y="111" font-size="17" fill="#1f2328">AI &amp; models</text><text x="26" y="145" font-size="17" fill="#1f2328">Algorithms</text><text x="26" y="179" font-size="17" fill="#1f2328">Data visualization</text><text x="26" y="213" font-size="17" fill="#1f2328">Financial modeling</text><text x="26" y="247" font-size="17" fill="#1f2328">M&amp;A</text>
 
       </g>
     </svg>

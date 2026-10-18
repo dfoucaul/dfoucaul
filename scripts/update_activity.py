@@ -156,6 +156,7 @@ def activity_block(days):
     active = sum(count > 0 for _, count in days)
     return f'''<!-- ACTIVITY:START -->
 <p align="center">
+  <a href="https://raw.githubusercontent.com/dfoucaul/dfoucaul/main/assets/activity-interactive.svg" title="Open the interactive chart">
   <picture>
     <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark-still.svg" />
     <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/activity-mobile-light-still.svg" />
@@ -166,8 +167,51 @@ def activity_block(days):
     <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
     <img src="assets/activity-light.svg" width="720" alt="{total:,} contributions across {active} active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
   </picture>
+  </a>
 </p>
 <!-- ACTIVITY:END -->'''
+
+
+def render_interactive(days):
+    """A standalone SVG document supports pointer/focus interaction, unlike img."""
+    svg = render_activity(days, "dark", still=True)
+    svg = svg.replace('width="720" height="235" viewBox="0 0 720 235"',
+                      'width="100%" height="100%" viewBox="0 0 720 270"')
+    counts = weekly_counts(days)
+    points = curve_points(counts, 28, 104, 664, 75)
+    step = 664 / (len(points) - 1)
+    buckets = []
+    for index, ((x, _), count) in enumerate(zip(points, counts)):
+        start = days[0][0] + timedelta(days=index * 7)
+        end = min(start + timedelta(days=6), days[-1][0])
+        label = f"{start} — {end}: {count:,} contributions"
+        tx = max(28, min(x - 94, 504))
+        hit_left = max(28, x - step / 2)
+        hit_right = min(692, x + step / 2)
+        buckets.append(f'''<g class="week" tabindex="0" role="group" aria-label="{escape(label)}">
+          <title>{escape(label)}</title>
+          <rect class="target" x="{hit_left:.2f}" y="94" width="{hit_right-hit_left:.2f}" height="96" fill="transparent" pointer-events="all"/>
+          <g class="detail" pointer-events="none">
+            <path d="M{x:.2f} 95V185" stroke="#b1bac4" stroke-width=".8" stroke-opacity=".6"/>
+            <g transform="translate({tx:.2f} 82)">
+              <rect width="188" height="59" rx="10" fill="#161b22" stroke="#3d444d" stroke-width=".7"/>
+              <text x="12" y="24" fill="#e6edf3" font-size="16">{count:,} contributions</text>
+              <text x="12" y="44" fill="#b1bac4" font-size="11">{start} — {end}</text>
+            </g>
+          </g>
+        </g>''')
+    interaction = f'''<style>
+      svg {{ background:#0d1117 }}
+      .week {{ outline:none }}
+      .target {{ cursor:crosshair }}
+      .detail {{ visibility:hidden;opacity:0 }}
+      .week:hover .detail,.week:focus .detail {{ visibility:visible;opacity:1 }}
+    </style>
+    <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+      {''.join(buckets)}
+      <text x="360" y="257" text-anchor="middle" fill="#a7adb6" font-size="11">Hover over the curve or use Tab to explore each week.</text>
+    </g>'''
+    return svg.replace('</svg>', interaction + '\n</svg>')
 
 
 def main():
@@ -184,7 +228,8 @@ def main():
         raise ValueError("Expected exactly one valid activity block")
     updated = re.sub(re.escape(start) + r".*?" + re.escape(end), activity_block(days),
                      current, flags=re.DOTALL)
-    outputs = {readme: updated}
+    outputs = {readme: updated,
+               ROOT / "assets/activity-interactive.svg": render_interactive(days)}
     for theme in ("dark", "light"):
         for mobile in (False, True):
             suffix = "mobile-" if mobile else ""

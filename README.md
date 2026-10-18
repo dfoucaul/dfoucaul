@@ -1,24 +1,13 @@
 <p align="center">
   <picture>
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/gooey-dark-still.svg" />
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/gooey-light-still.svg" />
-    <source media="(prefers-color-scheme: dark)" srcset="assets/gooey-dark.svg" />
-    <img src="assets/gooey-light.svg" width="640" alt="My monochrome halftone Medusa, surrounded by animated liquid silver." />
-  </picture>
-</p>
-
-<h3 align="center">luzdeguada</h3>
-
-<p align="center">
-  <picture>
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/stack-dark-still.svg" />
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/stack-light-still.svg" />
-    <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg" />
-    <img src="assets/stack-light.svg" width="330" alt="I build with Rust, Go, TypeScript and Python. Monochrome language symbols with a subtle silver sheen." />
-  </picture>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/exploring-dark.svg" />
-    <img src="assets/exploring-light.svg" width="330" alt="I'm exploring machine learning, AI and models, algorithms, and data visualization." />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark-still.svg" />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/header-mobile-light-still.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-dark-still.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/header-light-still.svg" />
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark.svg" />
+    <source media="(max-width: 600px)" srcset="assets/header-mobile-light.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg" />
+    <img src="assets/header-light.svg" width="960" alt="luzdeguada. Animated silver Medusa on the left. I build with Rust, Go, TypeScript and Python. I'm exploring machine learning, AI and models, algorithms, data visualization, financial modeling and M&amp;A." />
   </picture>
 </p>
 
@@ -26,6 +15,7 @@
 
 <!-- ACTIVITY:START -->
 <p align="center">
+  <a href="https://raw.githubusercontent.com/dfoucaul/dfoucaul/main/assets/activity-interactive.svg" title="Open the interactive chart">
   <picture>
     <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark-still.svg" />
     <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/activity-mobile-light-still.svg" />
@@ -36,7 +26,8 @@
     <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
     <img src="assets/activity-light.svg" width="720" alt="8,874 contributions across 346 active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
   </picture>
+  </a>
 </p>
 <!-- ACTIVITY:END -->
 
-<p align="center"><sub><a href="https://github.com/dfoucaul?tab=overview">View activity</a></sub></p>
+<p align="center"><sub><a href="https://raw.githubusercontent.com/dfoucaul/dfoucaul/main/assets/activity-interactive.svg">Explore weekly activity ↗</a></sub></p>
