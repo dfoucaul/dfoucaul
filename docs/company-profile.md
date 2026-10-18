@@ -2,17 +2,21 @@
 
 The profile keeps the animated Medusa, the Instrument Serif signature, and the
 two language/interests columns. The former activity/chart block is replaced by
-two original company portraits: Shredeo and Prometheus Vision.
+one shared company composition: Shredeo and Prometheus Vision.
 
-Each company uses its actual logo geometry in monochrome. A restrained silver
-ring, fine print texture and slow orbit connect the new marks visually to the
-Medusa. The artwork does not redraw or distort the brand symbols. The full
-company portraits link to their websites; contact emails remain real, selectable
-`mailto:` links in the README.
+On desktop, the companies sit side by side beneath a shared co-founder label.
+Their original flat monochrome marks are integrated into the name lockups.
+System sans-serif typography gives the businesses a separate identity from the
+personal Instrument Serif signature. Short descriptions and one common contact
+area replace the repeated full-width portraits and dividers.
 
-Desktop, mobile, light, dark and reduced-motion variants are provided. Company
-names use the same outlined Instrument Serif font as the personal signature.
-No live site, backend, private business data or application code was changed.
+On mobile, the companies form a compact vertical stack. Light and dark variants
+are provided. This section is deliberately static: no medallions, orbiting light,
+texture or repeated avatar effects. The personal portrait retains its animation
+and reduced-motion alternatives. Website and email links remain real links in
+the README. Short email labels avoid broken addresses on narrow screens; the
+full addresses appear in link titles and the `mailto:` destinations.
+No company application or private business data is changed.
 
 ## Public company sources
 
