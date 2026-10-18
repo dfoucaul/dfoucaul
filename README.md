@@ -17,7 +17,7 @@
 
 <!-- ACTIVITY:START -->
 <p align="center">
-  <strong>8 872 contributions</strong><br />
+  <strong>8 873 contributions</strong><br />
   <sub>Sur les douze derniers mois, activité privée incluse.</sub>
 </p>
 <!-- ACTIVITY:END -->
