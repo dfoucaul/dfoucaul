@@ -3,23 +3,40 @@
     <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/gooey-dark-still.svg" />
     <source media="(prefers-reduced-motion: reduce)" srcset="assets/gooey-light-still.svg" />
     <source media="(prefers-color-scheme: dark)" srcset="assets/gooey-dark.svg" />
-    <img src="assets/gooey-light.svg" width="640" alt="Ma Méduse en halftone noir et blanc, entourée de métal liquide animé." />
+    <img src="assets/gooey-light.svg" width="640" alt="My monochrome halftone Medusa, surrounded by animated liquid silver." />
   </picture>
 </p>
 
 <h3 align="center">luzdeguada</h3>
 
-<p align="center">Rust &nbsp;·&nbsp; Go &nbsp;·&nbsp; TypeScript &nbsp;·&nbsp; Python</p>
-
-<p align="center"><sub>Machine learning &nbsp;·&nbsp; IA &nbsp;·&nbsp; Algorithmes &nbsp;·&nbsp; Data</sub></p>
+<p align="center">
+  <picture>
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/stack-dark-still.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/stack-light-still.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg" />
+    <img src="assets/stack-light.svg" width="330" alt="I build with Rust, Go, TypeScript and Python. Monochrome language symbols with a subtle silver sheen." />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/exploring-dark.svg" />
+    <img src="assets/exploring-light.svg" width="330" alt="I'm exploring machine learning, AI and models, algorithms, and data visualization." />
+  </picture>
+</p>
 
 <br />
 
 <!-- ACTIVITY:START -->
 <p align="center">
-  <strong>8 873 contributions</strong><br />
-  <sub>Sur les douze derniers mois, activité privée incluse.</sub>
+  <picture>
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark-still.svg" />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/activity-mobile-light-still.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-dark-still.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/activity-light-still.svg" />
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark.svg" />
+    <source media="(max-width: 600px)" srcset="assets/activity-mobile-light.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
+    <img src="assets/activity-light.svg" width="720" alt="8,873 contributions across 346 active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
+  </picture>
 </p>
 <!-- ACTIVITY:END -->
 
-<p align="center"><sub><a href="https://github.com/dfoucaul?tab=overview">Voir mon activité</a></sub></p>
+<p align="center"><sub><a href="https://github.com/dfoucaul?tab=overview">View activity</a></sub></p>

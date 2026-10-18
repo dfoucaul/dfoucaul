@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - scripts/update_activity.py
+      - tests/test_activity.py
       - .github/workflows/update-activity.yml
 
 permissions:
@@ -25,11 +26,13 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
+      - name: Validate calendar aggregation
+        run: python3 -m unittest discover -s tests
       - name: Update contribution total
         run: python3 scripts/update_activity.py
       - name: Save when changed
         run: |
-          git add README.md
+          git add README.md assets/activity-*.svg
           if git diff --cached --quiet; then
             exit 0
           fi

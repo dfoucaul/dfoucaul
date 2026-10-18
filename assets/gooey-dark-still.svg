@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="360" viewBox="0 0 640 360" role="img" aria-labelledby="title description">
-    <title id="title">Méduse, métal liquide</title>
-    <desc id="description">Ma Méduse en halftone noir et blanc, entourée de gouttes argentées qui fusionnent lentement. L’animation respecte la préférence de mouvement réduit.</desc>
+    <title id="title">Medusa, liquid silver</title>
+    <desc id="description">My monochrome halftone Medusa, surrounded by slowly merging silver droplets. The animation respects reduced-motion preferences.</desc>
     <!-- Gooey technique: luukdv/gooey-react, MIT. See docs/licenses/. -->
 
     <defs>
