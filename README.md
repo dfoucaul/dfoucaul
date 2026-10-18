@@ -24,7 +24,7 @@
     <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark.svg" />
     <source media="(max-width: 600px)" srcset="assets/activity-mobile-light.svg" />
     <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
-    <img src="assets/activity-light.svg" width="720" alt="8,874 contributions across 346 active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
+    <img src="assets/activity-light.svg" width="720" alt="8,875 contributions across 346 active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
   </picture>
   </a>
 </p>
