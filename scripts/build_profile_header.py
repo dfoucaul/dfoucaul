@@ -50,12 +50,19 @@ def render(theme, mobile=False, still=False):
         stack = embed(section("stack", theme, still, 240), "stack", 390, 55, 240, 235)
         interests = embed(section("exploring", theme, True, 280), "interests", 660, 55, 280, 285)
         name_x, name_y = 180, 345
+    name = ET.parse(ROOT / "assets/name-instrument-serif.svg").getroot()
+    name.set("color", foreground)
+    name_width = float(name.attrib["width"])
+    name_height = float(name.attrib["height"])
+    baseline = float(name.attrib["data-baseline"])
+    wordmark = embed(ET.tostring(name, encoding="unicode"), "name",
+                     name_x - name_width / 2, name_y - baseline, name_width, name_height)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title description">
       <title id="title">luzdeguada</title>
       <desc id="description">Animated Medusa in liquid silver. I build with Rust, Go, TypeScript and Python. I'm exploring machine learning, AI and models, algorithms, data visualization, financial modeling and M&amp;A.</desc>
       <rect width="{width}" height="{height}" fill="{background}"/>
       {portrait}
-      <text x="{name_x}" y="{name_y}" text-anchor="middle" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif" font-size="20" font-weight="500" fill="{foreground}">luzdeguada</text>
+      {wordmark}
       {stack}
       {interests}
     </svg>'''

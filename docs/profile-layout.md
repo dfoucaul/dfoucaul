@@ -4,6 +4,14 @@ The visible profile is in English. The existing Medusa animation remains the
 main visual. On desktop it sits on the left, with two borderless columns on the
 right showing language symbols and plain-text interests. Interests include
 financial modeling and M&A, with no decorative icons.
+
+The name uses Instrument Serif Regular. Its shaped glyphs are preserved as SVG
+paths, so the chosen face renders consistently inside GitHub image embeds. The
+font source is retained in `assets/fonts/InstrumentSerif-Regular.ttf`, with its
+SIL Open Font License in `docs/licenses/Instrument-Serif-OFL.txt`. To rebuild only
+the outlined name, install `fonttools` and `uharfbuzz` in a development environment
+and run `python3 scripts/build_wordmark.py` before rebuilding the header. Ordinary
+header generation reads the already generated SVG without these dependencies.
 The language symbols receive one slow silver sheen every 14 seconds. An annual
 silver activity curve draws once on load. All animations honor reduced motion.
 
