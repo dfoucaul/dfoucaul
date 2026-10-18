@@ -3,10 +3,10 @@
 </p>
 
 <p align="center">
-  <a href="#mes-langages">LANGAGES</a> &nbsp; / &nbsp;
-  <a href="#ce-qui-mintéresse">ML &amp; DATA</a> &nbsp; / &nbsp;
-  <a href="#quelques-projets">PROJETS</a> &nbsp; / &nbsp;
-  <a href="#côté-github">STATS</a>
+  <a href="#user-content-mes-langages">LANGAGES</a> &nbsp; / &nbsp;
+  <a href="#user-content-ce-qui-mintéresse">ML &amp; DATA</a> &nbsp; / &nbsp;
+  <a href="#user-content-quelques-projets">PROJETS</a> &nbsp; / &nbsp;
+  <a href="#user-content-côté-github">STATS</a>
 </p>
 
 <br />
