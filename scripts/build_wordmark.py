@@ -23,7 +23,7 @@ def main():
     shaping_font.scale = (units, units)
     hb.ot_font_set_funcs(shaping_font)
     buffer = hb.Buffer()
-    buffer.add_str("luzdeguada")
+    buffer.add_str("Luz de Guada")
     buffer.guess_segment_properties()
     hb.shape(shaping_font, buffer, {"kern": True})
     glyphs = font.getGlyphSet()
@@ -40,7 +40,7 @@ def main():
     height = (ascent - descent) * size / units
     baseline = ascent * size / units
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width:.4f}" height="{height:.4f}" viewBox="0 {-ascent} {cursor} {ascent-descent}" data-baseline="{baseline:.4f}" role="img" aria-labelledby="title">
-  <title id="title">luzdeguada — Instrument Serif Regular</title>
+  <title id="title">Luz de Guada — Instrument Serif Regular</title>
   <path d="{pen.getCommands()}" transform="scale(1 -1)" fill="currentColor"/>
 </svg>
 '''

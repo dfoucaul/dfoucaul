@@ -58,7 +58,7 @@ def render(theme, mobile=False, still=False):
     wordmark = embed(ET.tostring(name, encoding="unicode"), "name",
                      name_x - name_width / 2, name_y - baseline, name_width, name_height)
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}" role="img" aria-labelledby="title description">
-      <title id="title">luzdeguada</title>
+      <title id="title">Luz de Guada</title>
       <desc id="description">Animated Medusa in liquid silver. I build with Rust, Go, TypeScript and Python. I'm exploring machine learning, AI and models, algorithms, data visualization, financial modeling and M&amp;A.</desc>
       <rect width="{width}" height="{height}" fill="{background}"/>
       {portrait}
