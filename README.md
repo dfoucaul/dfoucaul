@@ -11,23 +11,38 @@
   </picture>
 </p>
 
-<br />
-
-<!-- ACTIVITY:START -->
 <p align="center">
-  <a href="https://raw.githubusercontent.com/dfoucaul/dfoucaul/main/assets/activity-interactive.svg" title="Open the interactive chart">
-  <picture>
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark-still.svg" />
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/activity-mobile-light-still.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/activity-dark-still.svg" />
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/activity-light-still.svg" />
-    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/activity-mobile-dark.svg" />
-    <source media="(max-width: 600px)" srcset="assets/activity-mobile-light.svg" />
-    <source media="(prefers-color-scheme: dark)" srcset="assets/activity-dark.svg" />
-    <img src="assets/activity-light.svg" width="720" alt="8,875 contributions across 346 active days in the past 365 days. Private activity included. Weekly activity shown as a silver curve." />
-  </picture>
+  <a href="https://shredeo.com/">
+    <picture>
+      <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/company-shredeo-mobile-dark-still.svg" />
+      <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/company-shredeo-mobile-light-still.svg" />
+      <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/company-shredeo-dark-still.svg" />
+      <source media="(prefers-reduced-motion: reduce)" srcset="assets/company-shredeo-light-still.svg" />
+      <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/company-shredeo-mobile-dark.svg" />
+      <source media="(max-width: 600px)" srcset="assets/company-shredeo-mobile-light.svg" />
+      <source media="(prefers-color-scheme: dark)" srcset="assets/company-shredeo-dark.svg" />
+      <img src="assets/company-shredeo-light.svg" width="960" alt="Co-founder at Shredeo. One platform for gym operations, coaching, payments, branded member apps and AI automation." />
+    </picture>
   </a>
 </p>
-<!-- ACTIVITY:END -->
+<p align="right">
+  <sub><a href="https://shredeo.com/">shredeo.com ↗</a> &nbsp;·&nbsp; <a href="mailto:foucauld@shredeo.com">foucauld@shredeo.com</a></sub>
+</p>
 
-<p align="center"><sub><a href="https://raw.githubusercontent.com/dfoucaul/dfoucaul/main/assets/activity-interactive.svg">Explore weekly activity ↗</a></sub></p>
+<p align="center">
+  <a href="https://prometheus-vision.com/en">
+    <picture>
+      <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/company-prometheus-vision-mobile-dark-still.svg" />
+      <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/company-prometheus-vision-mobile-light-still.svg" />
+      <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/company-prometheus-vision-dark-still.svg" />
+      <source media="(prefers-reduced-motion: reduce)" srcset="assets/company-prometheus-vision-light-still.svg" />
+      <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/company-prometheus-vision-mobile-dark.svg" />
+      <source media="(max-width: 600px)" srcset="assets/company-prometheus-vision-mobile-light.svg" />
+      <source media="(prefers-color-scheme: dark)" srcset="assets/company-prometheus-vision-dark.svg" />
+      <img src="assets/company-prometheus-vision-light.svg" width="960" alt="Co-founder at Prometheus Vision. Custom software, AI and data solutions, built directly with the developers behind the work." />
+    </picture>
+  </a>
+</p>
+<p align="right">
+  <sub><a href="https://prometheus-vision.com/en">prometheus-vision.com ↗</a> &nbsp;·&nbsp; <a href="mailto:fdelahaye@prometheus-vision.com">fdelahaye@prometheus-vision.com</a></sub>
+</p>
