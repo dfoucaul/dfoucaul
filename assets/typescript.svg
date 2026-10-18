@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="52" viewBox="0 0 206 52" role="img" aria-label="TypeScript">
+    <rect x=".5" y=".5" width="205" height="51" fill="#101512" stroke="#354137"/>
+    <text x="12" y="31" font-family="Consolas,monospace" font-size="12" fill="#99bffc">03</text>
+    <text x="40" y="33" font-family="Arial,sans-serif" font-size="21" font-weight="600" fill="#f3f3e6">TypeScript</text>
+    <path d="M12 43h182" stroke="#99bffc" stroke-width="2"/>
+    </svg>
