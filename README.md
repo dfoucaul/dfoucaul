@@ -1,13 +1,13 @@
 <p align="center">
   <picture>
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark-still.svg?v=lissajous-1" />
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/header-mobile-light-still.svg?v=lissajous-1" />
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-dark-still.svg?v=lissajous-1" />
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/header-light-still.svg?v=lissajous-1" />
-    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark.svg?v=lissajous-1" />
-    <source media="(max-width: 600px)" srcset="assets/header-mobile-light.svg?v=lissajous-1" />
-    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg?v=lissajous-1" />
-    <img src="assets/header-light.svg?v=lissajous-1" width="960" alt="Luz de Guada. Animated silver Medusa on the left. I build with Rust, Go, TypeScript and Python. I'm exploring machine learning, AI and models, algorithms, data visualization, financial modeling and M&amp;A." />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark-still-db8e3a252105.svg" />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/header-mobile-light-still-cbf0ad519a1e.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/header-dark-still-d6f85a9b2784.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/header-light-still-30804318cc24.svg" />
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark-d6eb0723dbd6.svg" />
+    <source media="(max-width: 600px)" srcset="assets/header-mobile-light-a7cf9910c3aa.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark-18b5be6e2448.svg" />
+    <img src="assets/header-light-147a9b57ff8c.svg" width="960" alt="Luz de Guada. Animated silver Medusa on the left. I build with Rust, Go, TypeScript and Python. I'm exploring machine learning, AI and models, algorithms, data visualization, financial modeling and M&amp;A." />
   </picture>
 </p>
 

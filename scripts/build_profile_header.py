@@ -1,6 +1,8 @@
 """Compose the existing animated avatar and two columns into a responsive header."""
 
+from hashlib import sha256
 from pathlib import Path
+import re
 from xml.etree import ElementTree as ET
 
 from build_gooey import render as avatar
@@ -70,13 +72,27 @@ def render(theme, mobile=False, still=False):
 
 
 def main():
+    generated = {}
     for theme in ("dark", "light"):
         for mobile in (False, True):
             for still in (False, True):
                 prefix = "mobile-" if mobile else ""
                 suffix = "-still" if still else ""
-                path = ROOT / f"assets/header-{prefix}{theme}{suffix}.svg"
-                path.write_text(render(theme, mobile, still), encoding="utf-8")
+                markup = render(theme, mobile, still)
+                digest = sha256(markup.encode("utf-8")).hexdigest()[:12]
+                stem = f"header-{prefix}{theme}{suffix}"
+                path = ROOT / f"assets/{stem}-{digest}.svg"
+                path.write_text(markup, encoding="utf-8")
+                generated[stem] = path
+    # GitHub's /raw/ redirect drops query strings. Put the content version in
+    # the filename, so CDN/browser caches cannot return an older composition.
+    pattern = re.compile(r"assets/(header-(?:mobile-)?(?:dark|light)(?:-still)?)(?:-[0-9a-f]{12})?\.svg(?:\?v=[^\s\"<>]+)?")
+    readme = ROOT / "README.md"
+    readme.write_text(pattern.sub(lambda match: "assets/" + generated[match[1]].name,
+                                  readme.read_text(encoding="utf-8")), encoding="utf-8")
+    for path in (ROOT / "assets").glob("header-*.svg"):
+        if pattern.fullmatch("assets/" + path.name) and path not in generated.values():
+            path.unlink()
 
 
 if __name__ == "__main__":

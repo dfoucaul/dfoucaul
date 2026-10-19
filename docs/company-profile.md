@@ -60,6 +60,12 @@ geometry, animation and implementation here are original. No artwork or code
 from that profile is reused. The effect runs as embedded SVG, with explicit
 static header variants and a reduced-motion fallback within the motif itself.
 
+The header builder writes content-hashed filenames and updates the README's
+eight picture sources automatically. This avoids stale GitHub raw-image caches:
+the GitHub `/raw/` redirect drops query-string versions, while a new filename
+gives changed artwork a genuinely new URL. Superseded generated headers are
+removed by the builder.
+
 To rebuild the accent and composed headers:
 
 ```sh
