@@ -1,63 +1,46 @@
 # Profile layout
 
-The visible profile is in English. The existing Medusa animation remains the
-main visual. On desktop it sits on the left, with two borderless columns on the
-right showing language symbols and plain-text interests. Interests include
-financial modeling and M&A, with no decorative icons.
+The visible profile is in English. The monochrome Medusa is the main visual.
+On desktop it sits beside two borderless columns for languages and interests;
+on small screens the avatar sits above those columns. Both headings have small
+silver Lissajous figures. Company signatures for Shredeo and Prometheus Vision
+sit side by side on desktop and stack on mobile, with native website/email links.
 
-The name uses Instrument Serif Regular. Its shaped glyphs are preserved as SVG
-paths, so the chosen face renders consistently inside GitHub image embeds. The
-font source is retained in `assets/fonts/InstrumentSerif-Regular.ttf`, with its
-SIL Open Font License in `docs/licenses/Instrument-Serif-OFL.txt`. To rebuild only
-the outlined name, install `fonttools` and `uharfbuzz` in a development environment
-and run `python3 scripts/build_wordmark.py` before rebuilding the header. Ordinary
-header generation reads the already generated SVG without these dependencies.
-The language symbols receive one slow silver sheen every 14 seconds. An annual
-silver activity curve draws once on load. All animations honor reduced motion.
+The name uses Instrument Serif Regular, preserved as outlined SVG glyphs.
+The font source is in `assets/fonts/InstrumentSerif-Regular.ttf`, with its
+SIL Open Font License in `docs/licenses/Instrument-Serif-OFL.txt`. Optional font
+rebuilding needs `fonttools` and `uharfbuzz`; ordinary SVG generation uses only
+the Python standard library and the generated outlines already in the repo.
 
-On small screens the avatar sits above the two compact columns. Activity uses
-separate mobile and desktop SVG layouts to keep labels readable, with light and
-dark variants.
+Each layout has light/dark and explicit reduced-motion versions. The icon sheen
+runs every 14 seconds and the mathematical figures loop over 32 seconds. Header
+filenames include a content hash, and rebuilding updates the README sources and
+removes superseded generated headers automatically.
 
-## Activity data
+Static text and icon artwork are cached in an embedded vector image layer in
+animated headers. See [performance.md](performance.md) for optimizations,
+measurements and limits, and [company-profile.md](company-profile.md) for branding
+sources and visual inspiration.
 
-`scripts/update_activity.py` reads the dated daily cells and tooltips in the public
-GitHub contribution calendar. The sum, active days and weekly curve all use the
-same latest 365 consecutive dates. Counts include private activity the user
-already makes visible through GitHub's aggregate calendar. No private repository
-names, contents or access tokens are used. The last weekly bucket may be partial.
-
-The total can differ from GitHub's separately cached headline, whose date range
-and cache may differ from the daily cells. Using the dated cells keeps the curve
-and both metrics internally consistent. The exact date range is shown under it.
-
-`python3 -m unittest discover -s tests` checks ordering, the rolling year, incomplete
-data, partial weeks and zero activity. The scheduled workflow refreshes the
-README and the activity SVGs together. Explicit static sources are supplied for
-reduced motion, so the fixed chart is complete even in browsers that do not pass
-that media preference into SVG image documents.
+The former activity chart is no longer part of the README. Its workflow is
+archived outside `.github/workflows` and does not run. The historical data scripts
+and tests remain in the repository, but are not needed to build the profile.
 
 ## Rebuilding
 
 ```sh
+# Optional: rebuild outlined names after changing their text/font.
+python3 scripts/build_wordmark.py
+
+# Build the artwork, then the composed headers and README image sources.
+python3 scripts/build_exploration_motif.py
 python3 scripts/build_gooey.py
 python3 scripts/build_profile_sections.py
+python3 scripts/build_companies.py
 python3 scripts/build_profile_header.py
-python3 scripts/update_activity.py
 ```
 
-Language icons are the original monochrome paths from
+Language icons use the original monochrome paths from
 [Simple Icons](https://github.com/simple-icons/simple-icons), pinned to commit
 `4d29a35c954699b389a834aacc97dd6e7e74143c`. Their license is preserved in
-[`licenses/simple-icons-LICENSE.md`](licenses/simple-icons-LICENSE.md).
-
-## Hover interaction
-
-GitHub embeds the README chart as an image. SVG images run in a non-interactive
-context, so individual points cannot receive pointer events there. Clicking the
-chart opens `assets/activity-interactive.svg` as a standalone SVG document via
-the raw GitHub URL. It shows weekly dates and contribution counts on hover or
-keyboard focus. The same daily update refreshes this view alongside the README
-chart, without a separate website or JavaScript dependency.
-
-Reference: [MDN: scripting SVG and image-context restrictions](https://developer.mozilla.org/en-US/docs/Web/SVG/Guides/Scripting).
+[licenses/simple-icons-LICENSE.md](licenses/simple-icons-LICENSE.md).

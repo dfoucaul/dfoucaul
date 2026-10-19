@@ -14,6 +14,22 @@ def render(theme, still=False):
     image = base64.b64encode((ROOT / "assets/medusa-optimized.webp").read_bytes()).decode()
     ink = "#f5f5f7" if theme == "dark" else "#1d1d1f"
     background = "#0d1117" if theme == "dark" else "#ffffff"
+    # A radial falloff approximates the old shadow without blurring a second
+    # copy of the animated goo mask on every frame.
+    halo_defs, halos = [], []
+    for name, radius, transform in (
+        ("core", 95, ""), ("a", 27, "-138 -12"),
+        ("b", 22, "136 26"), ("c", 15, "-34 124"),
+    ):
+        outer = radius + 27
+        halo_defs.append(f'''<radialGradient id="halo-{name}">
+          <stop offset="{max(0, radius-18)/outer:.3f}" stop-color="{ink}" stop-opacity=".98"/>
+          <stop offset="{radius/outer:.3f}" stop-color="{ink}" stop-opacity=".44"/>
+          <stop offset="{(radius+9)/outer:.3f}" stop-color="{ink}" stop-opacity=".12"/>
+          <stop offset="1" stop-color="{ink}" stop-opacity="0"/>
+        </radialGradient>''')
+        motion = f'class="satellite-{name}" transform="translate({transform})"' if transform else ""
+        halos.append(f'<circle cx="320" cy="180" r="{outer}" fill="url(#halo-{name})" {motion}/>')
     # Per theme this is the surrounding GitHub canvas, not a card surface.
     animations = "" if still else '''
     <style>
@@ -48,13 +64,11 @@ def render(theme, still=False):
     <!-- Gooey technique: luukdv/gooey-react, MIT. See docs/licenses/. -->
     {animations}
     <defs>
-      <filter id="goo" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+      <filter id="goo" filterUnits="userSpaceOnUse" x="140" y="0" width="360" height="360" color-interpolation-filters="sRGB">
         <feGaussianBlur stdDeviation="8"/>
         <feColorMatrix values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 48 -24"/>
       </filter>
-      <filter id="soft-shadow" x="-50%" y="-50%" width="200%" height="200%">
-        <feGaussianBlur stdDeviation="9"/>
-      </filter>
+      {''.join(halo_defs)}
       <linearGradient id="silver" x1="170" y1="60" x2="450" y2="310" gradientUnits="userSpaceOnUse">
         <stop stop-color="#ffffff"/>
         <stop offset=".15" stop-color="#bfc4cb"/>
@@ -64,12 +78,12 @@ def render(theme, still=False):
         <stop offset=".87" stop-color="#929ba8"/>
         <stop offset="1" stop-color="#f5f5f7"/>
       </linearGradient>
-      <radialGradient id="glint" cx=".32" cy=".16" r=".8">
+      <radialGradient id="glint" cx=".32" cy=".16" r=".8" gradientUnits="userSpaceOnUse" gradientTransform="matrix(640 0 0 360 0 0)">
         <stop stop-color="#ffffff" stop-opacity=".7"/>
         <stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
         <stop offset="1" stop-color="#000000" stop-opacity=".24"/>
       </radialGradient>
-      <mask id="liquid" maskUnits="userSpaceOnUse" x="0" y="0" width="640" height="360" style="mask-type:luminance">
+      <mask id="liquid" maskUnits="userSpaceOnUse" x="140" y="0" width="360" height="360" style="mask-type:luminance">
         <g fill="white" filter="url(#goo)">
           <circle cx="320" cy="180" r="95"/>
           <circle class="satellite-a" cx="320" cy="180" r="27" transform="translate(-138 -12)"/>
@@ -80,12 +94,10 @@ def render(theme, still=False):
       <clipPath id="portrait"><circle cx="320" cy="180" r="83"/></clipPath>
     </defs>
     <rect width="640" height="360" fill="{background}"/>
-    <g opacity=".14" filter="url(#soft-shadow)" transform="translate(0 7)">
-      <rect width="640" height="360" fill="{ink}" mask="url(#liquid)"/>
-    </g>
+    <g opacity=".14" transform="translate(0 7)">{''.join(halos)}</g>
     <g mask="url(#liquid)">
-      <rect width="640" height="360" fill="url(#silver)"/>
-      <rect width="640" height="360" fill="url(#glint)"/>
+      <rect x="140" width="360" height="360" fill="url(#silver)"/>
+      <rect x="140" width="360" height="360" fill="url(#glint)"/>
     </g>
     <circle cx="320" cy="180" r="85" fill="#050505"/>
     <image x="237" y="97" width="166" height="166" clip-path="url(#portrait)" xlink:href="data:image/webp;base64,{image}"/>

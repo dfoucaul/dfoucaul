@@ -7,6 +7,7 @@ from xml.etree import ElementTree as ET
 
 from build_gooey import render as avatar
 from build_profile_sections import render as section
+from cache_static_layer import cache_static_layer
 
 ROOT = Path(__file__).resolve().parents[1]
 ET.register_namespace("", "http://www.w3.org/2000/svg")
@@ -68,6 +69,8 @@ def render(theme, mobile=False, still=False):
       {stack}
       {interests}
     </svg>'''
+    if not still:
+        svg = cache_static_layer(svg)
     return "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
 
 

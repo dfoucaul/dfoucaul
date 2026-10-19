@@ -1,23 +1,38 @@
 """Original phase-shifting Lissajous curves, rendered as a self-contained SVG."""
 
-from math import pi, sin
+from math import cos, pi, sin
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-SAMPLES = 128
+SEGMENTS = 12
 STEPS = 16
 
 
 def curve(phase, strand, variant="exploration"):
-    points = []
     frequency_x, frequency_y = (2, 3) if variant == "building" else (3, 2)
-    for index in range(SAMPLES):
-        t = 2 * pi * index / SAMPLES
-        # Different frequencies produce a closed figure; phase changes its shape.
-        x = 50 + 39 * sin(frequency_x * t + phase + strand * .11)
-        y = 32 + 25 * sin(frequency_y * t + strand * .08)
-        points.append(f"{x:.2f},{y:.2f}")
-    return "M" + "L".join(points) + "Z"
+
+    def point(t):
+        return (50 + 39 * sin(frequency_x * t + phase + strand * .11),
+                32 + 25 * sin(frequency_y * t + strand * .08))
+
+    def tangent(t):
+        return (39 * frequency_x * cos(frequency_x * t + phase + strand * .11),
+                25 * frequency_y * cos(frequency_y * t + strand * .08))
+
+    # Hermite-to-Bezier interpolation preserves the sine's tangents with 12
+    # cubic segments, instead of interpolating 128 independent vertices/frame.
+    step = 2 * pi / SEGMENTS
+    x, y = point(0)
+    commands = [f"M{x:.1f},{y:.1f}"]
+    for index in range(SEGMENTS):
+        start, end = index * step, (index + 1) * step
+        x0, y0 = point(start)
+        x1, y1 = point(end)
+        dx0, dy0 = tangent(start)
+        dx1, dy1 = tangent(end)
+        commands.append(f"C{x0+dx0*step/3:.1f},{y0+dy0*step/3:.1f} "
+                        f"{x1-dx1*step/3:.1f},{y1-dy1*step/3:.1f} {x1:.1f},{y1:.1f}")
+    return "".join(commands) + "Z"
 
 
 def render(theme, still=False, x=0, y=0, width=100, height=64,
