@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="450" viewBox="0 0 400 450" role="img" aria-labelledby="title desc">
+  <title id="title">Co-founder at Shredeo and Prometheus Vision</title>
+  <desc id="desc">Shredeo: one platform for gyms and studios, from memberships and coaching to payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation. Official monochrome logos.</desc>
+
+  <rect width="400" height="450" fill="#ffffff"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif">
+    <text x="24" y="32" fill="#59636e" font-size="12" letter-spacing="2.2">CO-FOUNDER</text>
+    <g>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 30 159 190" fill="#1f2328" role="img" aria-label="Shredeo" x="24" y="68" width="38" height="44"><path d="M134.86 31.03h75.38l-31.55 31.48c-3.03 3.02-5.47 3.48-9.95 3.48h-25.13c-3.75 0-6.13 0.18-8.65 2.71l-28.63 30.21c-2.52 2.75-3.87 4.45-3.81 8.26 0.05 2.94 1.34 4.68 3.47 6.81l25.48 26.61-23.33 24.53-38.18-38.49c-6.56-6.29-8.12-13.2-7.99-19.73 0.23-8.29 4.79-16.27 9.35-20.67l44.64-46.33c6.1-5.57 11.64-8.87 18.9-8.87zm57.9 133.7-47.32 47.73c-6.24 5.95-12.9 7.18-19.38 7.18h-73.76l31.61-30.53c3.15-3.07 5.35-3.8 9.16-3.8h26.39c4.41 0 6.39-1.91 9.78-5.3l28.84-29.74c2.58-2.81 3.48-5.14 2.93-8.12-0.5-2.7-2.24-4.45-4.23-6.44l-25.48-25.48 23.73-23.31 37.4 37.01c6.56 5.87 8.3 13.41 8.2 20.31-0.24 8.29-3.91 15.68-7.87 20.49z" /></svg>
+          <text x="82" y="100" fill="#1f2328" font-size="27" font-weight="600" letter-spacing="-.65">Shredeo</text>
+          <g fill="#59636e" font-size="17"><text x="24" y="156">One platform for gyms and studios.</text><text x="24" y="182">Memberships, coaching, payments</text><text x="24" y="208">and branded apps.</text></g>
+        </g><g>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="82 75 341 387" fill="#1f2328" role="img" aria-label="Prometheus Vision" x="24" y="288" width="38" height="44"><circle cx="256" cy="105" r="30" /><circle cx="256" cy="268" r="30" /><circle cx="256" cy="432" r="30" /><circle cx="112" cy="183" r="30" /><circle cx="112" cy="347" r="30" /><circle cx="393" cy="183" r="30" /><circle cx="393" cy="347" r="30" /></svg>
+          <text x="82" y="320" fill="#1f2328" font-size="27" font-weight="600" letter-spacing="-.65">Prometheus Vision</text>
+          <g fill="#59636e" font-size="17"><text x="24" y="376">Software, AI and data for businesses.</text><text x="24" y="402">From business intelligence to custom</text><text x="24" y="428">apps and intelligent automation.</text></g>
+        </g>
+  </g>
+
+</svg>

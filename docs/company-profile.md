@@ -11,8 +11,13 @@ personal Instrument Serif signature. Short descriptions and one common contact
 area replace the repeated full-width portraits and dividers.
 
 On mobile, the companies form a compact vertical stack. Light and dark variants
-are provided. This section is deliberately static: no medallions, orbiting light,
-texture or repeated avatar effects. The personal portrait retains its animation
+are provided. The six outer Prometheus dots emerge together from the stationary
+central dot over 950 milliseconds, then rotate as one group at a constant speed
+of one revolution per 24 seconds. The opening runs once; only the rotation loops.
+The original dot geometry, colors and text remain intact. The logo viewport lets
+the full rotating radius remain visible. Shredeo and all company text stay still.
+Explicit static variants and a CSS reduced-motion fallback keep the complete logo
+visible when motion is disabled. The personal portrait retains its animation
 and reduced-motion alternatives. Website and email links remain real links in
 the README. Short email labels avoid broken addresses on narrow screens; the
 full addresses appear in link titles and the `mailto:` destinations.

@@ -13,6 +13,10 @@
 
 <p align="center">
   <picture>
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark-still.svg" />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/companies-mobile-light-still.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-dark-still.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/companies-light-still.svg" />
     <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark.svg" />
     <source media="(max-width: 600px)" srcset="assets/companies-mobile-light.svg" />
     <source media="(prefers-color-scheme: dark)" srcset="assets/companies-dark.svg" />
