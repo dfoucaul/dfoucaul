@@ -8,29 +8,31 @@ SAMPLES = 128
 STEPS = 16
 
 
-def curve(phase, strand):
+def curve(phase, strand, variant="exploration"):
     points = []
+    frequency_x, frequency_y = (2, 3) if variant == "building" else (3, 2)
     for index in range(SAMPLES):
         t = 2 * pi * index / SAMPLES
         # Different frequencies produce a closed figure; phase changes its shape.
-        x = 50 + 39 * sin(3 * t + phase + strand * .11)
-        y = 32 + 25 * sin(2 * t + strand * .08)
+        x = 50 + 39 * sin(frequency_x * t + phase + strand * .11)
+        y = 32 + 25 * sin(frequency_y * t + strand * .08)
         points.append(f"{x:.2f},{y:.2f}")
     return "M" + "L".join(points) + "Z"
 
 
-def render(theme, still=False, x=0, y=0, width=100, height=64):
+def render(theme, still=False, x=0, y=0, width=100, height=64,
+           variant="exploration"):
     dark = theme == "dark"
     silver = "#b1bac4" if dark else "#59636e"
     ink = "#e6edf3" if dark else "#1f2328"
     animated, resting = [], []
     for strand in range(3):
-        phase = pi / 5
-        path = curve(phase, strand)
+        phase = pi / 3 if variant == "building" else pi / 5
+        path = curve(phase, strand, variant)
         style = f'fill="none" stroke="{ink if strand == 1 else silver}" stroke-width="1.1" stroke-opacity="{.72 if strand == 1 else .3}" stroke-linejoin="round"'
         resting.append(f'<path d="{path}" {style}/>')
         if not still:
-            frames = [curve(phase + 2 * pi * step / STEPS, strand)
+            frames = [curve(phase + 2 * pi * step / STEPS, strand, variant)
                       for step in range(STEPS)]
             frames.append(frames[0])
             animated.append(f'<path d="{path}" {style}><animate attributeName="d" dur="32s" repeatCount="indefinite" calcMode="linear" values="{";".join(frames)}"/></path>')
@@ -52,11 +54,12 @@ def render(theme, still=False, x=0, y=0, width=100, height=64):
 
 
 def main():
-    for theme in ("dark", "light"):
-        for still in (False, True):
-            suffix = "-still" if still else ""
-            path = ROOT / f"assets/exploration-motif-{theme}{suffix}.svg"
-            path.write_text(render(theme, still) + "\n", encoding="utf-8")
+    for variant in ("exploration", "building"):
+        for theme in ("dark", "light"):
+            for still in (False, True):
+                suffix = "-still" if still else ""
+                path = ROOT / f"assets/{variant}-motif-{theme}{suffix}.svg"
+                path.write_text(render(theme, still, variant=variant) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":

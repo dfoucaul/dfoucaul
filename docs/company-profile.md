@@ -54,6 +54,10 @@ Lissajous drawing. Its 3:2 frequencies relate to the algorithms and mathematics
 in the interests column. The phase evolves over a seamless 32-second loop;
 there is no glow, orbit or additional content section.
 
+A matching 2:3-frequency figure accompanies “I build with”. It shares the same
+silver strokes, three strands, 32-second rhythm and reduced-motion behavior,
+with a complementary curve and starting phase to distinguish the two headings.
+
 [Beetran Dahiya's generative README header](https://github.com/beetrandahiya/beetrandahiya)
 inspired the idea of using mathematical art as a personal signature. The curve
 geometry, animation and implementation here are original. No artwork or code
