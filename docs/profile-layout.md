@@ -12,16 +12,13 @@ SIL Open Font License in `docs/licenses/Instrument-Serif-OFL.txt`. Optional font
 rebuilding needs `fonttools` and `uharfbuzz`; ordinary SVG generation uses only
 the Python standard library and the generated outlines already in the repo.
 
-Each layout has light/dark and explicit reduced-motion versions. The animated
-header is pre-rendered as WebP at 24 fps; droplets, mathematical figures and icon
-sheen share a seamless 16-second loop. The reduced-motion header remains SVG.
-The original SVG source animations retain their separate timings (14 seconds
-for the icon sheen, 32 seconds for the figures). Both formats use content hashes.
+Each layout has light/dark and explicit reduced-motion versions. The icon sheen
+runs every 14 seconds and the mathematical figures loop over 32 seconds. Header
+filenames include a content hash, and rebuilding updates the README sources and
+removes superseded generated headers automatically.
 
-The SVG source caches static text and icon artwork in an embedded vector image
-layer. The published WebP header has no SVG filters or path animation to execute.
-Company text and the small Prometheus animation remain SVG.
-See [performance.md](performance.md) for optimizations,
+Static text and icon artwork are cached in an embedded vector image layer in
+animated headers. See [performance.md](performance.md) for optimizations,
 measurements and limits, and [company-profile.md](company-profile.md) for branding
 sources and visual inspiration.
 
@@ -41,18 +38,7 @@ python3 scripts/build_gooey.py
 python3 scripts/build_profile_sections.py
 python3 scripts/build_companies.py
 python3 scripts/build_profile_header.py
-
-# Build/publish all animated WebP variants after rebuilding the SVG sources.
-# Requires npx, Playwright CLI, Chromium and FFmpeg with libwebp_anim.
-python3 scripts/prerender_header.py --publish
 ```
-
-Without `--publish`, the pre-renderer writes candidates and its manifest only to
-`output/prerender/`. Matching PNG captures are reused on a repeated build.
-Publication validates all four image hashes, a 3 MiB per-image budget and the
-four animated README sources before copying any file. The four static picture
-sources keep their original SVG references. SVG animated sources remain in the
-repository for comparison and rollback.
 
 Language icons use the original monochrome paths from
 [Simple Icons](https://github.com/simple-icons/simple-icons), pinned to commit
