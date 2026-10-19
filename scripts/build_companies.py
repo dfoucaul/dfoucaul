@@ -1,7 +1,11 @@
 """Compose company lockups with a restrained, unfolding Prometheus mark."""
 
+import base64
+from copy import deepcopy
+from hashlib import sha256
 from html import escape
 from pathlib import Path
+import re
 from xml.etree import ElementTree as ET
 
 from build_profile_header import embed
@@ -47,6 +51,29 @@ def animate_prometheus(logo):
     # Paint the stationary center last so the initial stack is one clean dot.
     logo.remove(center)
     logo.append(center)
+
+
+def cache_company_artwork(markup):
+    """Let the image renderer reuse the fixed lettering while the dots move."""
+    svg = "{http://www.w3.org/2000/svg}"
+    root = ET.fromstring(markup)
+    plate = deepcopy(root)
+    for parent in plate.iter():
+        for child in list(parent):
+            if child.tag == svg + "style" or child.get("aria-label") == "Prometheus Vision":
+                parent.remove(child)
+    logo = next(node for node in root.iter(svg + "svg")
+                if node.get("aria-label") == "Prometheus Vision")
+    for child in list(root):
+        if child.tag not in (svg + "title", svg + "desc", svg + "style"):
+            root.remove(child)
+    data = base64.b64encode(ET.tostring(plate, encoding="utf-8")).decode("ascii")
+    ET.SubElement(root, svg + "image", {
+        "width": root.get("width"), "height": root.get("height"),
+        "href": "data:image/svg+xml;base64," + data, "aria-hidden": "true",
+    })
+    root.append(logo)
+    return ET.tostring(root, encoding="unicode")
 
 
 def render(theme, mobile=False, still=False):
@@ -96,7 +123,7 @@ def render(theme, mobile=False, still=False):
     }
     .prometheus-orbit {
       transform-origin:0 0;
-      animation:prometheus-turn 24s linear .95s infinite;
+      animation:prometheus-turn 24s steps(720, end) .95s infinite;
     }
     @media(prefers-reduced-motion:reduce) {
       .prometheus-expand,.prometheus-orbit { animation:none;transform:none }
@@ -114,17 +141,32 @@ def render(theme, mobile=False, still=False):
   {seam}
 </svg>
 '''
+    if not still:
+        svg = cache_company_artwork(svg)
     return "\n".join(line.rstrip() for line in svg.splitlines()) + "\n"
 
 
 def main():
+    generated = {}
     for theme in ("dark", "light"):
         for mobile in (False, True):
             prefix = "mobile-" if mobile else ""
             for still in (False, True):
                 suffix = "-still" if still else ""
-                (ROOT / f"assets/companies-{prefix}{theme}{suffix}.svg").write_text(
-                    render(theme, mobile, still), encoding="utf-8")
+                markup = render(theme, mobile, still)
+                digest = sha256(markup.encode("utf-8")).hexdigest()[:12]
+                stem = f"companies-{prefix}{theme}{suffix}"
+                path = ROOT / f"assets/{stem}-{digest}.svg"
+                path.write_text(markup, encoding="utf-8")
+                generated[stem] = path
+    # A new filename also refreshes GitHub's raw-image caches after a rebuild.
+    pattern = re.compile(r"assets/(companies-(?:mobile-)?(?:dark|light)(?:-still)?)(?:-[0-9a-f]{12})?\.svg")
+    readme = ROOT / "README.md"
+    readme.write_text(pattern.sub(lambda match: "assets/" + generated[match[1]].name,
+                                  readme.read_text(encoding="utf-8")), encoding="utf-8")
+    for path in (ROOT / "assets").glob("companies-*.svg"):
+        if pattern.fullmatch("assets/" + path.name) and path not in generated.values():
+            path.unlink()
 
 
 if __name__ == "__main__":

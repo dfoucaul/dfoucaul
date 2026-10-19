@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="260" viewBox="0 0 960 260" role="img" aria-labelledby="title desc">
+  <title id="title">Co-founder at Shredeo and Prometheus Vision</title>
+  <desc id="desc">Shredeo: one platform for gyms and studios, from memberships and coaching to payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation. Official monochrome logos.</desc>
+  <style>
+    @keyframes prometheus-unfold {
+      from { transform:scale(0) }
+      to { transform:scale(1) }
+    }
+    @keyframes prometheus-turn {
+      from { transform:rotate(0deg) }
+      to { transform:rotate(360deg) }
+    }
+    .prometheus-expand {
+      transform-origin:0 0;
+      animation:prometheus-unfold .95s cubic-bezier(.22,1,.36,1) both;
+    }
+    .prometheus-orbit {
+      transform-origin:0 0;
+      animation:prometheus-turn 24s steps(720, end) .95s infinite;
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .prometheus-expand,.prometheus-orbit { animation:none;transform:none }
+    }
+  </style>
+  <image width="960" height="260" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5NjAiIGhlaWdodD0iMjYwIiB2aWV3Qm94PSIwIDAgOTYwIDI2MCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsbGVkYnk9InRpdGxlIGRlc2MiPgogIDx0aXRsZSBpZD0idGl0bGUiPkNvLWZvdW5kZXIgYXQgU2hyZWRlbyBhbmQgUHJvbWV0aGV1cyBWaXNpb248L3RpdGxlPgogIDxkZXNjIGlkPSJkZXNjIj5TaHJlZGVvOiBvbmUgcGxhdGZvcm0gZm9yIGd5bXMgYW5kIHN0dWRpb3MsIGZyb20gbWVtYmVyc2hpcHMgYW5kIGNvYWNoaW5nIHRvIHBheW1lbnRzIGFuZCBicmFuZGVkIGFwcHMuIFByb21ldGhldXMgVmlzaW9uOiBzb2Z0d2FyZSwgQUkgYW5kIGRhdGEsIGZyb20gYnVzaW5lc3MgaW50ZWxsaWdlbmNlIHRvIGN1c3RvbSBhcHBzIGFuZCBhdXRvbWF0aW9uLiBPZmZpY2lhbCBtb25vY2hyb21lIGxvZ29zLjwvZGVzYz4KICA8cmVjdCB3aWR0aD0iOTYwIiBoZWlnaHQ9IjI2MCIgZmlsbD0iI2ZmZmZmZiIgLz4KICA8ZyBmb250LWZhbWlseT0iLWFwcGxlLXN5c3RlbSwgQmxpbmtNYWNTeXN0ZW1Gb250LCAnU2Vnb2UgVUknLCBBcmlhbCwgc2Fucy1zZXJpZiI+CiAgICA8dGV4dCB4PSI2NCIgeT0iNDIiIGZpbGw9IiM1OTYzNmUiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIyLjIiPkNPLUZPVU5ERVI8L3RleHQ+CiAgICA8Zz4KICAgICAgICAgIDxzdmcgdmlld0JveD0iNTIgMzAgMTU5IDE5MCIgZmlsbD0iIzFmMjMyOCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJTaHJlZGVvIiB4PSI2NCIgeT0iODQiIHdpZHRoPSIzOCIgaGVpZ2h0PSI0NCI+PHBhdGggZD0iTTEzNC44NiAzMS4wM2g3NS4zOGwtMzEuNTUgMzEuNDhjLTMuMDMgMy4wMi01LjQ3IDMuNDgtOS45NSAzLjQ4aC0yNS4xM2MtMy43NSAwLTYuMTMgMC4xOC04LjY1IDIuNzFsLTI4LjYzIDMwLjIxYy0yLjUyIDIuNzUtMy44NyA0LjQ1LTMuODEgOC4yNiAwLjA1IDIuOTQgMS4zNCA0LjY4IDMuNDcgNi44MWwyNS40OCAyNi42MS0yMy4zMyAyNC41My0zOC4xOC0zOC40OWMtNi41Ni02LjI5LTguMTItMTMuMi03Ljk5LTE5LjczIDAuMjMtOC4yOSA0Ljc5LTE2LjI3IDkuMzUtMjAuNjdsNDQuNjQtNDYuMzNjNi4xLTUuNTcgMTEuNjQtOC44NyAxOC45LTguODd6bTU3LjkgMTMzLjctNDcuMzIgNDcuNzNjLTYuMjQgNS45NS0xMi45IDcuMTgtMTkuMzggNy4xOGgtNzMuNzZsMzEuNjEtMzAuNTNjMy4xNS0zLjA3IDUuMzUtMy44IDkuMTYtMy44aDI2LjM5YzQuNDEgMCA2LjM5LTEuOTEgOS43OC01LjNsMjguODQtMjkuNzRjMi41OC0yLjgxIDMuNDgtNS4xNCAyLjkzLTguMTItMC41LTIuNy0yLjI0LTQuNDUtNC4yMy02LjQ0bC0yNS40OC0yNS40OCAyMy43My0yMy4zMSAzNy40IDM3LjAxYzYuNTYgNS44NyA4LjMgMTMuNDEgOC4yIDIwLjMxLTAuMjQgOC4yOS0zLjkxIDE1LjY4LTcuODcgMjAuNDl6IiAvPjwvc3ZnPgogICAgICAgICAgPHRleHQgeD0iMTIyIiB5PSIxMTYiIGZpbGw9IiMxZjIzMjgiIGZvbnQtc2l6ZT0iMjciIGZvbnQtd2VpZ2h0PSI2MDAiIGxldHRlci1zcGFjaW5nPSItLjY1Ij5TaHJlZGVvPC90ZXh0PgogICAgICAgICAgPGcgZmlsbD0iIzU5NjM2ZSIgZm9udC1zaXplPSIxNyI+PHRleHQgeD0iNjQiIHk9IjE3MiI+T25lIHBsYXRmb3JtIGZvciBneW1zIGFuZCBzdHVkaW9zLjwvdGV4dD48dGV4dCB4PSI2NCIgeT0iMTk4Ij5NZW1iZXJzaGlwcywgY29hY2hpbmcsIHBheW1lbnRzPC90ZXh0Pjx0ZXh0IHg9IjY0IiB5PSIyMjQiPmFuZCBicmFuZGVkIGFwcHMuPC90ZXh0PjwvZz4KICAgICAgICA8L2c+PGc+CiAgICAgICAgICA8dGV4dCB4PSI2MDIiIHk9IjExNiIgZmlsbD0iIzFmMjMyOCIgZm9udC1zaXplPSIyNyIgZm9udC13ZWlnaHQ9IjYwMCIgbGV0dGVyLXNwYWNpbmc9Ii0uNjUiPlByb21ldGhldXMgVmlzaW9uPC90ZXh0PgogICAgICAgICAgPGcgZmlsbD0iIzU5NjM2ZSIgZm9udC1zaXplPSIxNyI+PHRleHQgeD0iNTQ0IiB5PSIxNzIiPlNvZnR3YXJlLCBBSSBhbmQgZGF0YSBmb3IgYnVzaW5lc3Nlcy48L3RleHQ+PHRleHQgeD0iNTQ0IiB5PSIxOTgiPkZyb20gYnVzaW5lc3MgaW50ZWxsaWdlbmNlIHRvIGN1c3RvbTwvdGV4dD48dGV4dCB4PSI1NDQiIHk9IjIyNCI+YXBwcyBhbmQgaW50ZWxsaWdlbnQgYXV0b21hdGlvbi48L3RleHQ+PC9nPgogICAgICAgIDwvZz4KICA8L2c+CiAgPHBhdGggZD0iTTQ4MCA4M1YyMzgiIHN0cm9rZT0iI2QxZDllMCIgc3Ryb2tlLXdpZHRoPSIuNjUiIC8+Cjwvc3ZnPg==" aria-hidden="true" /><svg viewBox="82 75 341 387" fill="#1f2328" role="img" aria-label="Prometheus Vision" overflow="visible" x="544" y="84" width="38" height="44"><g transform="translate(256 268)"><g class="prometheus-orbit"><g class="prometheus-expand"><circle cx="0" cy="-163" r="30" /><circle cx="0" cy="164" r="30" /><circle cx="-144" cy="-85" r="30" /><circle cx="-144" cy="79" r="30" /><circle cx="137" cy="-85" r="30" /><circle cx="137" cy="79" r="30" /></g></g></g><circle cx="256" cy="268" r="30" /></svg>
+          </svg>

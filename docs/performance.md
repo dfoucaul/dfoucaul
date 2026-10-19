@@ -44,3 +44,34 @@ versions without animation, decoding the static vector layer, seamless motion
 loops, repeatable rebuilds, and browser checks on desktop/mobile in both themes.
 
 Rebuild using the commands in [profile-layout.md](profile-layout.md).
+
+## Company-logo refresh
+
+The first Prometheus animation put the six moving dots in the same SVG image
+document as both company descriptions. Profiling the image showed layout and
+paint work continuing throughout that entire composition. The fixed lettering
+and Shredeo mark now live in a reusable embedded static SVG layer; the original
+seven Prometheus circles remain a separate vector layer above it. No extra
+network request or browser script is added.
+
+The 950 ms simultaneous opening remains smooth. Only the subsequent 24-second
+rotation uses 720 evenly spaced steps: 30 updates per second, about 0.16 pixels
+of motion per step at the original logo size. Reduced-motion variants remain
+completely static. Company filenames now include content hashes so README
+visitors receive the corrected image rather than a cached earlier version.
+
+The full profile was compared before and after, including the unchanged animated
+Medusa and both mathematical figures: Chromium headless, 1120 × 1000 viewport,
+850 px article, 4× CPU throttling, HTTP cache disabled. Four local refreshes in
+the order before/after/after/before captured navigation, image decoding and
+3.5 seconds of frame sampling after DOMContentLoaded.
+
+| Trace event | Before, combined duration/count | After, combined duration/count | Time per event |
+| --- | ---: | ---: | ---: |
+| Paint | 1659.423 ms / 836 | 1217.420 ms / 826 | 25.7% lower |
+| Layout | 256.788 ms / 778 | 182.308 ms / 660 | 16.3% lower |
+
+No sampled animation-frame interval exceeded 25 ms in either optimized run.
+These are local, CPU-throttled rendering measurements, not a guarantee about
+GitHub network latency or every browser/device. The test harness and raw logs
+are local artifacts under `output/playwright/refresh-performance/`.

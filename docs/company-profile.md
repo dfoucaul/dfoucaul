@@ -13,7 +13,9 @@ area replace the repeated full-width portraits and dividers.
 On mobile, the companies form a compact vertical stack. Light and dark variants
 are provided. The six outer Prometheus dots emerge together from the stationary
 central dot over 950 milliseconds, then rotate as one group at a constant speed
-of one revolution per 24 seconds. The opening runs once; only the rotation loops.
+of one revolution per 24 seconds, sampled at 30 updates per second. The opening
+runs once; only the rotation loops. Lettering and the Shredeo mark are cached as
+a separate static vector layer rather than laid out again with every moving frame.
 The original dot geometry, colors and text remain intact. The logo viewport lets
 the full rotating radius remain visible. Shredeo and all company text stay still.
 Explicit static variants and a CSS reduced-motion fallback keep the complete logo
@@ -22,6 +24,10 @@ and reduced-motion alternatives. Website and email links remain real links in
 the README. Short email labels avoid broken addresses on narrow screens; the
 full addresses appear in link titles and the `mailto:` destinations.
 No company application or private business data is changed.
+
+The company builder versions all eight filenames by content and updates the
+README picture sources, as the header builder does. This prevents an older
+company animation from remaining behind GitHub's raw-image cache after a fix.
 
 ## Public company sources
 

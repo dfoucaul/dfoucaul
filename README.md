@@ -13,14 +13,14 @@
 
 <p align="center">
   <picture>
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark-still.svg" />
-    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/companies-mobile-light-still.svg" />
-    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-dark-still.svg" />
-    <source media="(prefers-reduced-motion: reduce)" srcset="assets/companies-light-still.svg" />
-    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark.svg" />
-    <source media="(max-width: 600px)" srcset="assets/companies-mobile-light.svg" />
-    <source media="(prefers-color-scheme: dark)" srcset="assets/companies-dark.svg" />
-    <img src="assets/companies-light.svg" width="960" alt="Co-founder at Shredeo and Prometheus Vision. Shredeo: one platform for gyms and studios, with memberships, coaching, payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation." />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark-still-7a4387e737ae.svg" />
+    <source media="(max-width: 600px) and (prefers-reduced-motion: reduce)" srcset="assets/companies-mobile-light-still-14b74f15934a.svg" />
+    <source media="(prefers-reduced-motion: reduce) and (prefers-color-scheme: dark)" srcset="assets/companies-dark-still-2c1aaf4ed5c9.svg" />
+    <source media="(prefers-reduced-motion: reduce)" srcset="assets/companies-light-still-624aad096594.svg" />
+    <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/companies-mobile-dark-9fdbe46f4eba.svg" />
+    <source media="(max-width: 600px)" srcset="assets/companies-mobile-light-fa9ed4f1c5f7.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="assets/companies-dark-8b62dcd11199.svg" />
+    <img src="assets/companies-light-34e5ec4a1982.svg" width="960" alt="Co-founder at Shredeo and Prometheus Vision. Shredeo: one platform for gyms and studios, with memberships, coaching, payments and branded apps. Prometheus Vision: software, AI and data, from business intelligence to custom apps and automation." />
   </picture>
 </p>
 <p align="center">
